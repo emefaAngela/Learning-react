@@ -1,16 +1,23 @@
 
 import Navbar from './Navbar';
 import Home from './Home';
+import{ BrowserRouter as Router, Route , Switch } from 'react-router-dom';
 
 function App() {
   const title= "Welcome to the new blog";
   return (
+    <Router>
     <div className="App">
       <Navbar/>
       <div className='content'>
-        <Home/>
+       <Sitch>
+          <Route path='/'>
+              <Home/>
+          </Route>
+       </Sitch>
       </div>
     </div>
+    </Router>
   );
 }
 
