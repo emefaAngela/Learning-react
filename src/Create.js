@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { useNavigate} from "react-router-dom";
+import Home from './Home';
 
 const Create = () => {
 
@@ -6,6 +8,7 @@ const Create = () => {
     const[body,setBody]=useState('');
     const[author,setAuthor]=useState('mario');
     const[isPending,setIspending]=useState(false);
+    const navigate = useNavigate();
 
     const handleSubmit=(e)=>{
         e.preventDefault();
@@ -19,8 +22,13 @@ const Create = () => {
         }).then(()=>{
             console.log('new blog added');
             setIspending(false);
+            navigate("/");
         })
+
+       
     }
+
+
     
     return ( 
         <div className="create">
